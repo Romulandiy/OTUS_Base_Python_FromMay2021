@@ -1,1 +1,2 @@
-# OTUS_Base_Python_FromMay2021
+*Student:* Roman K. 
+*Object:* Lessons of base Python.
