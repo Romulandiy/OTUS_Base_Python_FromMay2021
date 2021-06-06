@@ -1,2 +1,2 @@
-*Student:* Roman K. 
-*Object:* Lessons of base Python.
+__*Student:*__ Roman K.  
+__*Object:*__ Lessons of base Python.
