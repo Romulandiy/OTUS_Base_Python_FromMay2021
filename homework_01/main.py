@@ -49,9 +49,9 @@ def filter_numbers(int_num, filter_type):
 
     if filter_type == 'even':
         return list(filter(even_numbers, int_num))
-    elif filter_type == 'odd':
+    if filter_type == 'odd':
         return list(filter(odd_numbers, int_num))
-    elif filter_type == 'prime':
+    if filter_type == 'prime':
         return list(filter(is_prime, int_num))
 
 
