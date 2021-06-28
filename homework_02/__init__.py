@@ -3,8 +3,7 @@
 Классы и модули
 """
 # from . import base, car, engine, exceptions, plane
-# from . Vehicle import Vehicle
-from homework_02.base.Vehicle import Vehicle
+from homework_02.base import Vehicle
 
 # __all__ = [
 #     "base",
@@ -16,10 +15,7 @@ from homework_02.base.Vehicle import Vehicle
 
 
 # Example # 1 ----------------------------------------
-vehicle_1 = Vehicle(weight=1380,
-                    started=False,
-                    fuel=50,
-                    fuel_consumption=12.7)
+vehicle_1 = Vehicle(fuel=0)
 
 if __name__ == '__main__':
-    start()
+    vehicle_1.start()

@@ -5,8 +5,9 @@
 - CargoOverload
 """
 
+
 class LowFuelError(Exception):
-    pass
+    print('Not enough fuel for going!')
 
 class NotEnoughFuel(Exception):
     pass
