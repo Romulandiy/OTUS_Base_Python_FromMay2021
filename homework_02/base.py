@@ -16,8 +16,7 @@ class Vehicle(ABC):
         try:
             if self.fuel > 0:
                 self.started = True
-
-        except Exception:
+            elif self.fuel <= 0:
+                raise LowFuelError
+        except LowFuelError as ex:
             print("Raised an exception", "\n")
-
-

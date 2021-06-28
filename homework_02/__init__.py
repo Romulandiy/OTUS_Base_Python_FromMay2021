@@ -15,7 +15,7 @@ from homework_02.base import Vehicle
 
 
 # Example # 1 ----------------------------------------
-vehicle_1 = Vehicle(fuel=0)
+vehicle_1 = Vehicle(fuel=660)
 
 if __name__ == '__main__':
     vehicle_1.start()
