@@ -7,10 +7,21 @@
 
 
 class LowFuelError(Exception):
-    print('Not enough fuel for going!')
+
+    @staticmethod
+    def low_fuel_error():
+        print('Low fuel error!')
+
 
 class NotEnoughFuel(Exception):
-    pass
+
+    @staticmethod
+    def not_enough_fuel():
+        print('Not enough fuel!')
+
 
 class CargoOverload(Exception):
-    pass
+
+    @staticmethod
+    def car_go_overload():
+        print('Car go overload!')
