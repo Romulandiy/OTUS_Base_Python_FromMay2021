@@ -1,14 +1,13 @@
 from abc import ABC
-from dataclasses import dataclass
 from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
-@dataclass
 class Vehicle(ABC):
-    weight: int = 1380
-    started: bool = False
-    fuel: int = 45
-    fuel_consumption: float = 12.7
+
+    def __init__(self, weight=1380, started=False, fuel=45, fuel_consumption=11):
+        self.weight = weight
+        self.fuel = fuel
+        self.fuel_consumption = fuel_consumption
 
     def start(self):
         try:

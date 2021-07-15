@@ -13,11 +13,11 @@ vehicle_1_2 = Vehicle(fuel=20, fuel_consumption=17, started=False, weight=1500)
 vehicle_1_3 = Vehicle(fuel=30, fuel_consumption=15, started=False, weight=2100)
 
 # ---- Task # 1_4 ----:
-vehicle_1_4 = Vehicle(fuel=50, fuel_consumption=11.7, started=False, weight=2450)
+vehicle_1_4 = Vehicle(fuel=50, fuel_consumption=11, started=False, weight=2450)
 
 # ---- Task # 2_1 ----:'
 engine_example_1 = Engine(volume=2.5, pistons=6)
-car_2_1 = Car(engine_example_1)
+car_2_1 = Car(engine=engine_example_1)
 
 if __name__ == '__main__':
     print('---- Task # 1_1 ----:')
