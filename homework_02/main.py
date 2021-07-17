@@ -20,10 +20,10 @@ engine_example_1 = Engine(volume=2.5, pistons=6)
 car_2_1 = Car()
 
 # ---- Task # 3_1, 3_2, 3_3 ----:'
-plane_1 = Plane(cargo=12000, max_cargo=17000)
+plane_1 = Plane(max_cargo=3000)
 
 # ---- Task # 3_4 ----:'
-plane_2 = Plane(cargo=0, max_cargo=17000)
+plane_2 = Plane(max_cargo=17000)
 
 
 if __name__ == '__main__':
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print(car_2_1.set_engine(engine=engine_example_1))
 
     print('\n---- Task # 3_1 ----:')
-    print(plane_1.load_cargo(number=7700))
+    print(plane_1.load_cargo(number=3100))
 
     print('\n---- Task # 3_2 ----:')
     print(plane_1.load_cargo(number=800))
