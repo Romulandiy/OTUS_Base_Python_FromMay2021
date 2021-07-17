@@ -14,9 +14,7 @@ class Vehicle(ABC):
 
     def start(self):
         try:
-            if self.fuel <= 0:
-                raise LowFuelError
-            else:
+            if self.fuel > 0:
                 Vehicle.started = True
                 print(f'Vehicle.started = {Vehicle.started}')
         except LowFuelError:
