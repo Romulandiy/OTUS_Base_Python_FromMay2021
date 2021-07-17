@@ -10,14 +10,14 @@ vehicle_1_1 = Vehicle(fuel=0, fuel_consumption=17, weight=1500)
 vehicle_1_2 = Vehicle(fuel=20, fuel_consumption=17, weight=1500)
 
 # ---- Task # 1_3 ----:
-vehicle_1_3 = Vehicle(fuel=30, fuel_consumption=15, weight=2100)
+vehicle_1_3 = Vehicle(fuel=50, fuel_consumption=15, weight=2100)
 
 # ---- Task # 1_4 ----:
 vehicle_1_4 = Vehicle(fuel=50, fuel_consumption=11, weight=2450)
 
 # ---- Task # 2_1 ----:'
 engine_example_1 = Engine(volume=2.5, pistons=6)
-car_2_1 = Car(engine=engine_example_1)
+car_2_1 = Car()
 
 # ---- Task # 3_1, 3_2, 3_3 ----:'
 plane_1 = Plane(cargo=12000, max_cargo=17000)
@@ -34,10 +34,10 @@ if __name__ == '__main__':
     vehicle_1_2.start()
 
     print('\n---- Task # 1_3 ----:')
-    vehicle_1_3.move(dist=400)
+    vehicle_1_3.move(dist=300)
 
     print('\n---- Task # 1_4 ----:')
-    vehicle_1_4.move(dist=250)
+    vehicle_1_4.move(dist=750)
 
     print('\n---- Task # 2_1 ----:')
     print(car_2_1.set_engine(engine=engine_example_1))

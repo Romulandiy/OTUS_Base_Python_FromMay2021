@@ -6,7 +6,7 @@ class Vehicle(ABC):
 
     started = False
 
-    def __init__(self, weight=900, fuel=32, fuel_consumption=14):
+    def __init__(self, weight=900, fuel=23, fuel_consumption=14):
 
         self.weight = weight
         self.fuel = fuel
