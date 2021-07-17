@@ -8,7 +8,7 @@ from homework_02.exceptions import CargoOverload
 class Plane(Vehicle):
 
     def __init__(self, cargo, max_cargo):
-        super().__init__()
+        # super().__init__()
 
         self.cargo = cargo
         self.max_cargo = max_cargo
