@@ -7,9 +7,9 @@ class Vehicle(ABC):
     def __init__(self, weight, fuel, fuel_consumption):
 
         started = False
-        self.weight = 1380
+        self.weight = 900
         self.fuel = 45
-        self.fuel_consumption = 11
+        self.fuel_consumption = 14
 
     def start(self):
         try:
