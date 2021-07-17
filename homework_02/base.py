@@ -32,4 +32,4 @@ class Vehicle(ABC):
                 print(f'fuel after changed = {self.fuel}')
         except NotEnoughFuel:
             print('Raised an exception from def move')
-            NotEnoughFuel.not_enough_fuel()
+            raise NotEnoughFuel.not_enough_fuel()
