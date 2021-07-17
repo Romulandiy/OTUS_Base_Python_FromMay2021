@@ -14,12 +14,14 @@ class Vehicle(ABC):
 
     def start(self):
         try:
-            if self.fuel > 0:
+            if self.fuel <= 0:
+                raise LowFuelError
+            else:
                 Vehicle.started = True
                 print(f'Vehicle.started = {Vehicle.started}')
         except LowFuelError:
             print('Raised an exception from def start')
-            LowFuelError.low_fuel_error()
+            raise LowFuelError.low_fuel_error()
 
     def move(self, dist):
         try:
