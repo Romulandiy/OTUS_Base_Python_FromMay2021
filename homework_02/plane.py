@@ -25,9 +25,9 @@ class Plane(Vehicle):
             CargoOverload.car_go_overload()
 
     def remove_all_cargo(self):
-        if self.cargo == 0:
-            return self.cargo
+        if Plane.cargo == 0:
+            return Plane.cargo
         else:
-            tmp = self.cargo
-            self.cargo = 0
+            tmp = Plane.cargo
+            Plane.cargo = 0
         return tmp

@@ -22,10 +22,6 @@ car_2_1 = Car()
 # ---- Task # 3_1, 3_2, 3_3 ----:'
 plane_1 = Plane(max_cargo=3000)
 
-# ---- Task # 3_4 ----:'
-plane_2 = Plane(max_cargo=17000)
-
-
 if __name__ == '__main__':
     print('---- Task # 1_1 ----:')
     vehicle_1_1.start()
@@ -51,5 +47,3 @@ if __name__ == '__main__':
     print('\n---- Task # 3_3 ----:')
     print(plane_1.remove_all_cargo())
 
-    print('\n---- Task # 3_4 ----:')
-    print(plane_2.remove_all_cargo())
