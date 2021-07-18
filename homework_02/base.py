@@ -4,23 +4,19 @@ from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 class Vehicle(ABC):
 
-    started = False
-
     def __init__(self, weight=900, fuel=23, fuel_consumption=14):
 
+        self.started = False
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
 
     def start(self):
         try:
-            if self.fuel <= 0:
-                raise LowFuelError
-            else:
-                Vehicle.started = True
-                print(f'Vehicle.started = {Vehicle.started}')
+            if self.fuel > 0:
+                self.started = True
+                print(f'self.started = {self.started}')
         except LowFuelError:
-            print('Raised an exception from def start')
             raise LowFuelError.low_fuel_error()
 
     def move(self, dist):
@@ -32,4 +28,4 @@ class Vehicle(ABC):
                 print(f'fuel after changed = {self.fuel}')
         except NotEnoughFuel:
             print('Raised an exception from def move')
-            raise NotEnoughFuel.not_enough_fuel()
+            NotEnoughFuel.not_enough_fuel()

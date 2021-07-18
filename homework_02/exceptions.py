@@ -6,7 +6,7 @@
 """
 
 
-class LowFuelError(Exception):
+class LowFuelError:
 
     @staticmethod
     def low_fuel_error():

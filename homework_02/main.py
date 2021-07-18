@@ -26,24 +26,24 @@ if __name__ == '__main__':
     print('---- Task # 1_1 ----:')
     vehicle_1_1.start()
 
-    # print('\n---- Task # 1_2 ----:')
-    # vehicle_1_2.start()
-    #
-    # print('\n---- Task # 1_3 ----:')
-    # vehicle_1_3.move(dist=300)
-    #
-    # print('\n---- Task # 1_4 ----:')
-    # vehicle_1_4.move(dist=750)
-    #
-    # print('\n---- Task # 2_1 ----:')
-    # print(car_2_1.set_engine(engine=engine_example_1))
-    #
-    # print('\n---- Task # 3_1 ----:')
-    # print(plane_1.load_cargo(number=3100))
-    #
-    # print('\n---- Task # 3_2 ----:')
-    # print(plane_1.load_cargo(number=800))
-    #
-    # print('\n---- Task # 3_3 ----:')
-    # print(plane_1.remove_all_cargo())
+    print('\n---- Task # 1_2 ----:')
+    vehicle_1_2.start()
+
+    print('\n---- Task # 1_3 ----:')
+    vehicle_1_3.move(dist=300)
+
+    print('\n---- Task # 1_4 ----:')
+    vehicle_1_4.move(dist=750)
+
+    print('\n---- Task # 2_1 ----:')
+    print(car_2_1.set_engine(engine=engine_example_1))
+
+    print('\n---- Task # 3_1 ----:')
+    print(plane_1.load_cargo(number=3100))
+
+    print('\n---- Task # 3_2 ----:')
+    print(plane_1.load_cargo(number=800))
+
+    print('\n---- Task # 3_3 ----:')
+    print(plane_1.remove_all_cargo())
 
