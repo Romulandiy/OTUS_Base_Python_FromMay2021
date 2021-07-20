@@ -1,6 +1,7 @@
 from homework_02.base import Vehicle
 from homework_02.car import Car
 from homework_02.engine import Engine
+from homework_02.exceptions import LowFuelError, NotEnoughFuel, CargoOverload
 from homework_02.plane import Plane
 
 # ---- Task # 1_1 ----:
@@ -24,22 +25,35 @@ plane_1 = Plane(weight=1100, fuel=20, fuel_consumption=13, max_cargo=3000)
 
 if __name__ == '__main__':
     print('---- Task # 1_1 ----:')
-    vehicle_1_1.start()
+    try:
+        vehicle_1_1.start()
+    except LowFuelError as e:
+        print(e)
+
 
     print('\n---- Task # 1_2 ----:')
     vehicle_1_2.start()
 
     print('\n---- Task # 1_3 ----:')
-    vehicle_1_3.move(dist=300)
+    try:
+        vehicle_1_3.move(dist=300)
+    except NotEnoughFuel as e:
+        print(e)
 
     print('\n---- Task # 1_4 ----:')
-    vehicle_1_4.move(dist=750)
+    try:
+        vehicle_1_4.move(dist=750)
+    except NotEnoughFuel as e:
+        print(e)
 
     print('\n---- Task # 2_1 ----:')
     print(car_2_1.set_engine(engine=engine_example_1))
 
     print('\n---- Task # 3_1 ----:')
-    print(plane_1.load_cargo(number=3100))
+    try:
+        print(plane_1.load_cargo(number=3100))
+    except CargoOverload as e:
+        print(e)
 
     print('\n---- Task # 3_2 ----:')
     print(plane_1.load_cargo(number=800))

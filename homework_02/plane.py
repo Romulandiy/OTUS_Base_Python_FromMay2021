@@ -14,15 +14,11 @@ class Plane(Vehicle):
 
 
     def load_cargo(self, number):
-        try:
-            if number + Plane.cargo > self.max_cargo:
-                raise CargoOverload('error car')
-            else:
-                Plane.cargo += number
-                print(f'Plane.cargo after plus with number = {Plane.cargo}')
-        except CargoOverload:
-            print('Raised an exception from def load_cargo')
-            CargoOverload.car_go_overload()
+        if number + Plane.cargo > self.max_cargo:
+            raise CargoOverload('error car')
+        else:
+            Plane.cargo += number
+            print(f'Plane.cargo after plus with number = {Plane.cargo}')
 
     def remove_all_cargo(self):
         if Plane.cargo == 0:
