@@ -20,7 +20,7 @@ engine_example_1 = Engine(volume=2.5, pistons=6)
 car_2_1 = Car()
 
 # ---- Task # 3_1, 3_2, 3_3 ----:'
-plane_1 = Plane(max_cargo=3000)
+plane_1 = Plane(weight=1100, fuel=20, fuel_consumption=13, max_cargo=3000)
 
 if __name__ == '__main__':
     print('---- Task # 1_1 ----:')
