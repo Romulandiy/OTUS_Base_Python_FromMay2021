@@ -19,9 +19,9 @@ class Vehicle(ABC):
             raise LowFuelError('Error: low fuel!')
 
     def move(self, dist):
-        if self.fuel - dist / 100 * self.fuel_consumption < 0:
-            raise NotEnoughFuel('Error: not enough fuel!')
-        else:
-            self.fuel = self.fuel - dist / 100 * self.fuel_consumption
+        max_distance = self.fuel // self.fuel_consumption
+        if dist <= max_distance:
+            self.fuel = self.fuel - dist * self.fuel_consumption
             print(f'fuel after changed = {self.fuel}')
-
+        else:
+            raise NotEnoughFuel('Error: not enough fuel!')

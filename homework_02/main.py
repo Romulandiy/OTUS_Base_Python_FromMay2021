@@ -30,9 +30,11 @@ if __name__ == '__main__':
     except LowFuelError as e:
         print(e)
 
-
     print('\n---- Task # 1_2 ----:')
-    vehicle_1_2.start()
+    try:
+        vehicle_1_2.start()
+    except LowFuelError as e:
+        print(e)
 
     print('\n---- Task # 1_3 ----:')
     try:
@@ -60,4 +62,3 @@ if __name__ == '__main__':
 
     print('\n---- Task # 3_3 ----:')
     print(plane_1.remove_all_cargo())
-
