@@ -1,9 +1,8 @@
 from typing import Optional
-
 from fastapi import FastAPI, exceptions, Header, Depends
 
-import crud
-from models import UserIn, UserOut, User, AuthorIn, AuthorOut, PostOut, Author, PostIn
+from web_app import crud
+from web_app.models import UserIn, UserOut, User, AuthorIn, AuthorOut, PostOut, Author, PostIn
 
 app = FastAPI()
 
@@ -15,19 +14,15 @@ def hello(
     """
     Hello world view
     1. processes `request`
-    1. returns greeting
+    2. returns greeting
     """
     return {"Hello": name}
 
-
-#
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
-
-#
 
 @app.post("/users", response_model=UserOut, tags=["Users"])
 def create_user(user_in: UserIn):

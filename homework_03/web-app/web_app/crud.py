@@ -1,6 +1,6 @@
 from typing import Optional, Dict
 
-from models import UserIn, User, AuthorIn, Author, Post, PostIn
+from web_app.models import UserIn, User, AuthorIn, Author, Post, PostIn
 
 
 USERS_BY_ID: Dict[int, User] = {}
