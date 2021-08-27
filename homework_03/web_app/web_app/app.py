@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/", summary="Get a hello world json")
 def hello(
-    name: str = "World",
+    name: str = "World!",
 ):
     """
     Hello world view
