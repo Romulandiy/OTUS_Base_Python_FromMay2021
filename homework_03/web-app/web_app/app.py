@@ -7,16 +7,16 @@ from web_app.models import UserIn, UserOut, User, AuthorIn, AuthorOut, PostOut, 
 app = FastAPI()
 
 
-@app.get("/", summary="Get a hello world json")
+@app.get("/ping/", summary="Get a hello world json")
 def hello(
-    name: str = "World!",
+    name: str = "pong",
 ):
     """
     Hello world view
     1. processes `request`
     2. returns greeting
     """
-    return {"Hello": name}
+    return {"message": name}
 
 
 @app.get("/items/{item_id}")
