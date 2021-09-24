@@ -1,7 +1,7 @@
 py~=1.10.0
 colorama~=0.4.3
 pytest~=6.2.4
-pip~=20.0.2
+pip~=21.2.4
 keyring~=18.0.1
 attrs~=19.3.0
 toml~=0.10.2
