@@ -11,7 +11,7 @@
 - доработайте модуль `models`:
     - создайте асинхронный алхимичный `engine` (при помощи `create_async_engine`)
     - добавьте `declarative base`
-    - создайте объект `Session` на основе класса `AsyncSession`
+    - ###### создайте объект `Session` на основе класса `[AsyncSession](~~``~~)`
     - добавьте модели `User` и `Post`, объявите поля:
         - для модели `User` обязательными являются `name`, `username`, `email`
         - для модели `Post` обязательными являются `user_id`, `title`, `body`

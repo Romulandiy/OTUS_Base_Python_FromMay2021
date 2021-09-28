@@ -10,25 +10,19 @@
 
 # import os
 #
-# from sqlalchemy.ext.asyncio import create_async_engine
-#
 # PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://postgres:password@localhost/postgres"
 #
 # Base = None
 # Session = None
 #
 #
-# engine = create_async_engine()
 
-
-
-
+import os
 from datetime import datetime, timedelta
 from typing import List, Optional
 from pprint import pprint
 
 from sqlalchemy import (
-    create_engine,
     Column,
     Integer,
     String,
@@ -38,25 +32,24 @@ from sqlalchemy import (
     or_,
 )
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import declarative_base, sessionmaker, scoped_session
 
-engine = create_engine("sqlite:///example-db-04.sqlite", echo=True)
+PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://postgres:password@localhost/postgres"
+
+engine = create_async_engine(PG_CONN_URI, echo=True)
 Base = declarative_base(bind=engine)
 
-session_factory = sessionmaker(bind=engine)
+session_factory = sessionmaker(bind=engine, class_=AsyncSession)
 Session = scoped_session(session_factory)
 
 
 class User(Base):
     __tablename__ = "users"
-    #
-    # def __init__(self, username, is_staff):
-    #     self.username = username
-    #     self.is_staff = is_staff
 
-    id = Column(Integer, primary_key=True)
+    name = Column(String(32), primary_key=True)
     username = Column(String(32), unique=True)
-    is_staff = Column(Boolean, nullable=False, default=False)
+    email = Column(String(32), nullable=False, default='example_test@email.com')
     created_at = Column(
         DateTime,
         nullable=False,
@@ -66,13 +59,38 @@ class User(Base):
 
     def __str__(self):
         return (
-            f"{self.__class__.__name__}(id={self.id}, "
-            f"username={self.username!r}, is_staff={self.is_staff}, "
+            f"{self.__class__.__name__}(name={self.name}, "
+            f"username={self.username!r}, email={self.email}, "
             f"created_at={self.created_at})"
         )
 
     def __repr__(self):
         return str(self)
+
+
+class Post(Base):
+    __tablename__ = "posts"
+
+    user_id = Column(Integer, primary_key=True)
+    title = Column(String(32), unique=True)
+    body = Column(String(32), nullable=False, default='example_test@email.com')
+    created_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        server_default=func.now(),
+    )
+
+    def __str__(self):
+        return (
+            f"{self.__class__.__name__}(user_id={self.user_id}, "
+            f"title={self.title!r}, body={self.body}, "
+            f"created_at={self.created_at})"
+        )
+
+    def __repr__(self):
+        return str(self)
+
 
 
 def create_admin():
@@ -152,9 +170,9 @@ def get_users_filtered():
 
     users: List[User] = (
         session
-        .query(User)
-        .filter(User.id > 2)
-        .all()
+            .query(User)
+            .filter(User.id > 2)
+            .all()
     )
     pprint(users)
 
@@ -171,12 +189,12 @@ def get_recent_users():
     print(recent_time)
     users: List[User] = (
         session
-        .query(User)
-        .filter_by(is_staff=False)
-        .filter(
+            .query(User)
+            .filter_by(is_staff=False)
+            .filter(
             User.created_at > recent_time,
         )
-        .all()
+            .all()
     )
     print("recent users")
     pprint(users)
@@ -194,9 +212,9 @@ def get_some_recent_users():
     print(recent_time)
     users: List[User] = (
         session
-        .query(User)
-        # .filter_by(is_staff=False)
-        .filter(
+            .query(User)
+            # .filter_by(is_staff=False)
+            .filter(
             or_(
                 User.created_at > recent_time,
                 # User.is_staff == True,
@@ -204,7 +222,7 @@ def get_some_recent_users():
             ),
 
         )
-        .all()
+            .all()
     )
     print("some recent users")
     pprint(users)
@@ -236,4 +254,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
